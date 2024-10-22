@@ -13,11 +13,12 @@
     </header>
     <main>
       <div id="score-board">
-        <section class="player-area"></section>
+        <section class="player-name-display"></section>
+        <section class="player-score-display"></section>
       </div>
       <div id="game-board">
         <label for="player-name">Enter Player Name</label>
-        <form>
+        <form class="player-form">
           <input
             type="text"
             class="player-name"
@@ -26,9 +27,8 @@
           />
           <input type="submit" value="Join" />
         </form>
-        <button type="button">Start Game</button>
-        <button type="button">Switch Player</button>
-        <button type="button">Score Points</button>
+        <button type="button" id="start-game-button">Start Game</button>
+        <button type="button" id="score-points-button">Score Points</button>
       </div>
     </main>
     <footer>&copy;2024 Ryan Burns</footer>

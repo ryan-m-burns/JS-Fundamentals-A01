@@ -8,4 +8,10 @@ const game = {
   scorePointsButton: document.querySelector('#score-points-button'),
   playerNameDisplay: document.querySelector('.player-name-display'),
   playerScoreDisplay: document.querySelector('.player-score-display'),
+  toggleGame: () => {
+    console.log(`beginning of toggleGame: ${isRunning}`);
+    isRunning = !isRunning;
+    console.log(`end of toggleGame: ${isRunning}`);
+  },
+  //   updatePlayerName: ()
 };
