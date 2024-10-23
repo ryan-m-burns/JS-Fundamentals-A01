@@ -36,49 +36,62 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-}
-header {
-  display: flex;
-  background-color: green;
-  align-items: center;
-  flex-direction: column;
-  section {
+
+  header {
     display: flex;
-    span {
-      padding: 10px;
+    background-color: green;
+    align-items: center;
+    flex-direction: column;
+
+    section {
+      display: flex;
+      span {
+        padding: 10px;
+      }
     }
   }
+
+  main {
+    background-image: url('../images/dancing-banana.gif');
+    width: 800px;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+  }
+
+  footer {
+    text-align: right;
+    padding-right: 20px;
+  }
 }
-header.paused {
-  background-color: rgba(0, 128, 0, 0.648);
+
+body.paused {
+  background-color: grey;
+  header {
+    background-color: rgba(0, 128, 0, 0.648);
+  }
+  main {
+    background-image: url('../images/dancing-banana.png');
+  }
 }
 
 #game-board {
   display: flex;
   flex-direction: column;
+
   button {
     width: max-content;
   }
 }
-.player-name-display.greyed {
-  color: rgb(65, 65, 65);
-}
-.player-score-display.greyed {
-  color: rgb(65, 65, 65);
-}
-main {
-  background-image: url('../images/dancing-banana.gif');
-  width: 800px;
-  height: 100%;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  margin: auto;
-}
-main.paused {
-  background-image: url('../images/dancing-banana.png');
-}
-footer {
-  text-align: right;
-  padding-right: 20px;
+
+#score-board.greyed {
+  .player-name-display {
+    color: rgb(65, 65, 65);
+  }
+
+  .player-score-display {
+    color: rgb(65, 65, 65);
+  }
 }

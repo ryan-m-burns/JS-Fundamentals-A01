@@ -10,30 +10,21 @@
   <body>
     <header>
       <h1>Green Mode</h1>
-      <div id="score-board">
+      <div id="score-board" class="greyed">
         <section>
-          <span class="player-name-display greyed">Player 0</span>
-          <span class="player-score-display greyed">0</span>
+          <span class="player-name-display">Player 0</span>
+          <span class="player-score-display">0</span>
         </section>
       </div>
     </header>
     <main>
       <div id="game-board">
         <form class="player-form">
-          <input
-            type="text"
-            id="player-name"
-            name="player-name"
-            placeholder="Player Name"
-          />
+          <input type="text" id="player-name" name="player-name" placeholder="Player Name" />
           <input type="button" id="join-game-button" value="Join" />
         </form>
-        <button type="button" id="start-game-button" disabled>
-          Start Game
-        </button>
-        <button type="button" id="score-points-button" disabled>
-          Score Points
-        </button>
+        <button type="button" id="start-game-button" disabled>Start Game</button>
+        <button type="button" id="score-points-button" disabled>Score Points</button>
       </div>
     </main>
     <footer>&copy;2024 Ryan Burns</footer>

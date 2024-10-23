@@ -17,17 +17,13 @@
       if (this.isRunning) {
         this.startGameButton.textContent = 'Pause';
         this.scorePointsButton.disabled = false;
-        d.querySelector('main').classList.remove('paused');
-        d.querySelector('header').classList.remove('paused');
-        this.playerNameDisplay.classList.remove('greyed');
-        this.playerScoreDisplay.classList.remove('greyed');
+        d.querySelector('body').classList.remove('paused');
+        this.scoreBoard.classList.remove('greyed');
       } else {
         this.startGameButton.textContent = 'Resume';
         this.scorePointsButton.disabled = true;
-        d.querySelector('main').classList.add('paused');
-        d.querySelector('header').classList.add('paused');
-        this.playerNameDisplay.classList.add('greyed');
-        this.playerScoreDisplay.classList.add('greyed');
+        d.querySelector('body').classList.add('paused');
+        this.scoreBoard.classList.add('greyed');
       }
     },
 
@@ -66,8 +62,5 @@
   });
 
   game.startGameButton.addEventListener('click', () => game.toggleRunning());
-
-  game.scorePointsButton.addEventListener('click', () =>
-    player.updatePlayerScore()
-  );
+  game.scorePointsButton.addEventListener('click', () => player.updatePlayerScore());
 })(document);
