@@ -1,17 +1,51 @@
-const game = {
-  title: 'Green Mode',
-  isRunning: false,
-  gameBoard: document.querySelector('.game-board'),
-  scoreBoard: document.querySelector('.score-board'),
-  playerForm: document.querySelector('.player-form'),
-  joinGameButton: document.querySelector('#start-game-button'),
-  scorePointsButton: document.querySelector('#score-points-button'),
-  playerNameDisplay: document.querySelector('.player-name-display'),
-  playerScoreDisplay: document.querySelector('.player-score-display'),
-  toggleGame: () => {
-    console.log(`beginning of toggleGame: ${isRunning}`);
-    isRunning = !isRunning;
-    console.log(`end of toggleGame: ${isRunning}`);
-  },
-  //   updatePlayerName: ()
-};
+(function (d) {
+  const game = {
+    title: 'Green Mode',
+    isRunning: false,
+
+    gameBoard: d.querySelector('.game-board'),
+    scoreBoard: d.querySelector('.score-board'),
+    playerForm: d.querySelector('.player-form'),
+    joinGameButton: d.querySelector('#join-game-button'),
+    startGameButton: d.querySelector('#start-game-button'),
+    scorePointsButton: d.querySelector('#score-points-button'),
+    playerNameDisplay: d.querySelector('.player-name-display'),
+    playerScoreDisplay: d.querySelector('.player-score-display'),
+
+    toggleRunning() {
+      this.isRunning = !this.isRunning;
+    },
+
+    updatePlayerName(playerName) {
+      this.playerNameDisplay.textContent = playerName;
+    },
+
+    updatePlayerScore(currentScore) {
+      this.playerScoreDisplay.textContent = currentScore;
+    },
+  };
+
+  const player = {
+    name: 'Player 0',
+    score: 0,
+    updatePlayerName() {
+      this.name = d.getElementById('player-name').value;
+      console.log(this.name);
+      game.updatePlayerName(this.name);
+    },
+    updatePlayerScore() {
+      this.score += 2;
+      game.updatePlayerScore(this.score);
+    },
+  };
+
+  game.joinGameButton.addEventListener('click', (e) =>
+    player.updatePlayerName()
+  );
+
+  game.startGameButton.addEventListener('click', () => game.toggleRunning());
+
+  game.scorePointsButton.addEventListener('click', () =>
+    player.updatePlayerScore()
+  );
+})(document);

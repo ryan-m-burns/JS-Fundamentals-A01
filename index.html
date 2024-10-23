@@ -13,19 +13,18 @@
     </header>
     <main>
       <div id="score-board">
-        <section class="player-name-display"></section>
-        <section class="player-score-display"></section>
+        <section class="player-name-display"><p>Player 0</p></section>
+        <section class="player-score-display">0</section>
       </div>
       <div id="game-board">
-        <label for="player-name">Enter Player Name</label>
         <form class="player-form">
           <input
             type="text"
-            class="player-name"
+            id="player-name"
             name="player-name"
             placeholder="Player Name"
           />
-          <input type="submit" value="Join" />
+          <input type="button" id="join-game-button" value="Join" />
         </form>
         <button type="button" id="start-game-button">Start Game</button>
         <button type="button" id="score-points-button">Score Points</button>
