@@ -3,8 +3,8 @@
     title: 'Green Mode',
     isRunning: false,
 
-    gameBoard: d.querySelector('.game-board'),
-    scoreBoard: d.querySelector('.score-board'),
+    gameBoard: d.querySelector('#game-board'),
+    scoreBoard: d.querySelector('#score-board'),
     playerForm: d.querySelector('.player-form'),
     joinGameButton: d.querySelector('#join-game-button'),
     startGameButton: d.querySelector('#start-game-button'),
@@ -19,11 +19,15 @@
         this.scorePointsButton.disabled = false;
         d.querySelector('main').classList.remove('paused');
         d.querySelector('header').classList.remove('paused');
+        this.playerNameDisplay.classList.remove('greyed');
+        this.playerScoreDisplay.classList.remove('greyed');
       } else {
         this.startGameButton.textContent = 'Resume';
         this.scorePointsButton.disabled = true;
         d.querySelector('main').classList.add('paused');
         d.querySelector('header').classList.add('paused');
+        this.playerNameDisplay.classList.add('greyed');
+        this.playerScoreDisplay.classList.add('greyed');
       }
     },
 

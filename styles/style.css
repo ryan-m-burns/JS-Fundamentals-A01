@@ -50,8 +50,21 @@ header {
   }
 }
 header.paused {
-  color: grey;
-  background-color: rgb(52, 63, 52);
+  background-color: rgba(0, 128, 0, 0.648);
+}
+
+#game-board {
+  display: flex;
+  flex-direction: column;
+  button {
+    width: max-content;
+  }
+}
+.player-name-display.greyed {
+  color: rgb(65, 65, 65);
+}
+.player-score-display.greyed {
+  color: rgb(65, 65, 65);
 }
 main {
   background-image: url('../images/dancing-banana.gif');
@@ -63,8 +76,7 @@ main {
   margin: auto;
 }
 main.paused {
-  background-image: none;
-  background-color: grey;
+  background-image: url('../images/dancing-banana.png');
 }
 footer {
   text-align: right;
