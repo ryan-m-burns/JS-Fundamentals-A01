@@ -14,6 +14,13 @@
 
     toggleRunning() {
       this.isRunning = !this.isRunning;
+      if (this.isRunning) {
+        this.startGameButton.textContent = 'Pause';
+        this.scorePointsButton.disabled = false;
+      } else {
+        this.startGameButton.textContent = 'Resume';
+        this.scorePointsButton.disabled = true;
+      }
     },
 
     updatePlayerName(playerName) {
@@ -22,26 +29,30 @@
 
     updatePlayerScore(currentScore) {
       this.playerScoreDisplay.textContent = currentScore;
-    },
+    }
   };
 
   const player = {
     name: 'Player 0',
     score: 0,
+
     updatePlayerName() {
       this.name = d.getElementById('player-name').value;
       console.log(this.name);
       game.updatePlayerName(this.name);
     },
+
     updatePlayerScore() {
       this.score += 2;
       game.updatePlayerScore(this.score);
-    },
+    }
   };
 
-  game.joinGameButton.addEventListener('click', (e) =>
-    player.updatePlayerName()
-  );
+  game.joinGameButton.addEventListener('click', () => {
+    player.updatePlayerName();
+    game.joinGameButton.disabled = true;
+    game.startGameButton.disabled = false;
+  });
 
   game.startGameButton.addEventListener('click', () => game.toggleRunning());
 

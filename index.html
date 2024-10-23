@@ -13,7 +13,7 @@
     </header>
     <main>
       <div id="score-board">
-        <section class="player-name-display"><p>Player 0</p></section>
+        <section class="player-name-display">Player 0</section>
         <section class="player-score-display">0</section>
       </div>
       <div id="game-board">
@@ -26,8 +26,12 @@
           />
           <input type="button" id="join-game-button" value="Join" />
         </form>
-        <button type="button" id="start-game-button">Start Game</button>
-        <button type="button" id="score-points-button">Score Points</button>
+        <button type="button" id="start-game-button" disabled>
+          Start Game
+        </button>
+        <button type="button" id="score-points-button" disabled>
+          Score Points
+        </button>
       </div>
     </main>
     <footer>&copy;2024 Ryan Burns</footer>
