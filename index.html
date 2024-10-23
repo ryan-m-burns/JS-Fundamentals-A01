@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./scripts/script.js" defer></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Green Mode</title>
+  </head>
+  <body>
+    <header>
+      <h1>Green Mode</h1>
+      <div id="score-board">
+        <section>
+          <span class="player-name-display greyed">Player 0</span>
+          <span class="player-score-display greyed">0</span>
+        </section>
+      </div>
+    </header>
+    <main>
+      <div id="game-board">
+        <form class="player-form">
+          <input
+            type="text"
+            id="player-name"
+            name="player-name"
+            placeholder="Player Name"
+          />
+          <input type="button" id="join-game-button" value="Join" />
+        </form>
+        <button type="button" id="start-game-button" disabled>
+          Start Game
+        </button>
+        <button type="button" id="score-points-button" disabled>
+          Score Points
+        </button>
+      </div>
+    </main>
+    <footer>&copy;2024 Ryan Burns</footer>
+  </body>
+</html>
