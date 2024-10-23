@@ -17,9 +17,13 @@
       if (this.isRunning) {
         this.startGameButton.textContent = 'Pause';
         this.scorePointsButton.disabled = false;
+        d.querySelector('main').classList.remove('paused');
+        d.querySelector('header').classList.remove('paused');
       } else {
         this.startGameButton.textContent = 'Resume';
         this.scorePointsButton.disabled = true;
+        d.querySelector('main').classList.add('paused');
+        d.querySelector('header').classList.add('paused');
       }
     },
 
@@ -49,9 +53,12 @@
   };
 
   game.joinGameButton.addEventListener('click', () => {
-    player.updatePlayerName();
-    game.joinGameButton.disabled = true;
-    game.startGameButton.disabled = false;
+    if (d.getElementById('player-name').value) {
+      player.updatePlayerName();
+      game.joinGameButton.disabled = true;
+      game.playerForm.hidden = true;
+      game.startGameButton.disabled = false;
+    }
   });
 
   game.startGameButton.addEventListener('click', () => game.toggleRunning());
