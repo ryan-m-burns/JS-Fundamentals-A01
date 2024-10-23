@@ -1,3 +1,5 @@
+'use strict';
+
 (function (d) {
   const game = {
     title: 'Green Mode',
