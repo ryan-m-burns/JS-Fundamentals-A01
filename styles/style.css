@@ -38,26 +38,48 @@ body {
   grid-template-rows: auto 1fr auto;
 
   header {
-    display: flex;
-    background-color: green;
+    min-height: 50px;
+    height: auto;
+    width: 100vw;
+    background-color: rgb(247, 101, 125);
     align-items: center;
     flex-direction: column;
 
-    section {
+    #score-board {
       display: flex;
-      span {
+      flex-flow: wrap;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      height: 100%;
+      width: 100vw;
+    }
+    div {
+      min-width: 25%;
+      width: auto;
+      display: flex;
+      justify-content: center;
+      p {
+        color: rgb(65, 65, 65);
         padding: 10px;
+      }
+    }
+    div.featured {
+      p {
+        color: white;
+        font-size: 1.1em;
       }
     }
   }
 
   main {
+    background-color: #0a0303;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     background-image: url('../images/dancing-banana.gif');
     width: 800px;
     height: 100%;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
     margin: auto;
   }
 
@@ -70,10 +92,16 @@ body {
 body.paused {
   background-color: grey;
   header {
-    background-color: rgba(0, 128, 0, 0.648);
+    background-color: rgba(247, 101, 125, 0.591);
   }
   main {
     background-image: url('../images/dancing-banana.png');
+  }
+  div.featured {
+    p {
+      color: rgb(65, 65, 65);
+      font-size: 1em;
+    }
   }
 }
 
@@ -87,11 +115,6 @@ body.paused {
 }
 
 #score-board.greyed {
-  .player-name-display {
-    color: rgb(65, 65, 65);
-  }
-
-  .player-score-display {
-    color: rgb(65, 65, 65);
-  }
+  color: rgb(65, 65, 65);
+  color: rgb(65, 65, 65);
 }
